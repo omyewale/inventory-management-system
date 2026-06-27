@@ -32,7 +32,6 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SearchIcon from "@mui/icons-material/Search";
 import DownloadIcon from "@mui/icons-material/Download";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import FileOpenIcon from "@mui/icons-material/FileOpen";
 
 import { api } from "../services/api";
@@ -42,7 +41,7 @@ import { TableSkeleton } from "../components/LoadingSkeleton";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
   const [limit] = useState(10);
@@ -98,6 +97,7 @@ const Products = () => {
 
   useEffect(() => {
     fetchProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, sortBy, sortOrder, lowStock]);
 
   const handleSearchSubmit = (e) => {

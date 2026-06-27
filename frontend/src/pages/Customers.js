@@ -35,7 +35,7 @@ import { TableSkeleton } from "../components/LoadingSkeleton";
 
 const Customers = () => {
   const [customers, setCustomers] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
   const [limit] = useState(10);
@@ -84,6 +84,7 @@ const Customers = () => {
 
   useEffect(() => {
     fetchCustomers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, sortBy, sortOrder]);
 
   const handleSearchSubmit = (e) => {
@@ -286,7 +287,7 @@ const Customers = () => {
                   {...register("phone", {
                     validate: (v) => {
                       if (!v) return true;
-                      const cleaned = v.replace(/[\s\-\(\)]/g, "");
+                      const cleaned = v.replace(/[\s\-()]/g, "");
                       return /^\+?\d{7,15}$/.test(cleaned) || "Phone must be between 7 and 15 digits";
                     },
                   })}

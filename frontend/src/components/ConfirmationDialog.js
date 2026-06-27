@@ -6,7 +6,6 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
-import Box from "@mui/material/Box";
 
 const ConfirmationDialog = ({ open, title, message, onConfirm, onCancel, confirmText = "Confirm", cancelText = "Cancel", severity = "error" }) => {
   return (

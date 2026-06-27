@@ -47,6 +47,7 @@ const OrderDetails = () => {
 
   useEffect(() => {
     fetchOrderDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const handleDeleteConfirm = async () => {

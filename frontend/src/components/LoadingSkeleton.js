@@ -53,4 +53,5 @@ export const FormSkeleton = () => {
   );
 };
 
-export default { CardSkeleton, TableSkeleton, FormSkeleton };
+const Skeletons = { CardSkeleton, TableSkeleton, FormSkeleton };
+export default Skeletons;

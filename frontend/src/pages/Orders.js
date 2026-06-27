@@ -5,7 +5,6 @@ import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import Grid from "@mui/material/Grid";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -26,7 +25,6 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SearchIcon from "@mui/icons-material/Search";
 import DownloadIcon from "@mui/icons-material/Download";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 
 import { api } from "../services/api";
@@ -36,7 +34,7 @@ import { TableSkeleton } from "../components/LoadingSkeleton";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
   const [limit] = useState(10);
@@ -74,6 +72,7 @@ const Orders = () => {
 
   useEffect(() => {
     fetchOrders();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page, statusFilter, sortBy, sortOrder]);
 
   const handleSearchSubmit = (e) => {
