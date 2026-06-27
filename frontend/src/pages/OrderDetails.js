@@ -112,7 +112,7 @@ const OrderDetails = () => {
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                   <Typography variant="body2" color="text.secondary">Invoice Total:</Typography>
                   <Typography variant="h6" color="primary" sx={{ fontWeight: 800 }}>
-                    ${Number(order.total_amount).toFixed(2)}
+                    ₹{Number(order.total_amount).toFixed(2)}
                   </Typography>
                 </Box>
               </Stack>
@@ -161,9 +161,9 @@ const OrderDetails = () => {
                       <TableCell sx={{ fontFamily: "monospace" }}>{item.sku}</TableCell>
                       <TableCell sx={{ fontWeight: 550 }}>{item.product_name}</TableCell>
                       <TableCell align="right">{item.quantity}</TableCell>
-                      <TableCell align="right">${Number(item.price).toFixed(2)}</TableCell>
+                      <TableCell align="right">₹{Number(item.price).toFixed(2)}</TableCell>
                       <TableCell align="right" sx={{ fontWeight: "bold" }}>
-                        ${(Number(item.price) * item.quantity).toFixed(2)}
+                        ₹{(Number(item.price) * item.quantity).toFixed(2)}
                       </TableCell>
                     </TableRow>
                   ))}
@@ -173,7 +173,7 @@ const OrderDetails = () => {
                       Grand Total:
                     </TableCell>
                     <TableCell align="right" sx={{ fontWeight: 800, color: "primary.main" }}>
-                      ${Number(order.total_amount).toFixed(2)}
+                      ₹{Number(order.total_amount).toFixed(2)}
                     </TableCell>
                   </TableRow>
                 </TableBody>

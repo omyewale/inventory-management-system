@@ -73,7 +73,7 @@ const Dashboard = () => {
   const kpis = [
     {
       title: "Total Revenue",
-      value: `$${Number(stats?.total_revenue).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+      value: `₹${Number(stats?.total_revenue).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
       icon: <AttachMoneyIcon sx={{ fontSize: 32 }} />,
       color: "#10b981", // Green
       bg: "rgba(16, 185, 129, 0.1)",
@@ -256,7 +256,7 @@ const Dashboard = () => {
                       borderRadius: 8,
                       color: theme.palette.text.primary,
                     }}
-                    formatter={(value) => [`$${Number(value).toFixed(2)}`, "Revenue"]}
+                    formatter={(value) => [`₹${Number(value).toFixed(2)}`, "Revenue"]}
                   />
                   <Area
                     type="monotone"
@@ -389,7 +389,7 @@ const Dashboard = () => {
                         <TableCell sx={{ fontWeight: 500 }}>#{ord.id}</TableCell>
                         <TableCell>{ord.customer_name}</TableCell>
                         <TableCell align="right" sx={{ fontWeight: "bold" }}>
-                          ${Number(ord.total_amount).toFixed(2)}
+                          ₹{Number(ord.total_amount).toFixed(2)}
                         </TableCell>
                       </TableRow>
                     ))

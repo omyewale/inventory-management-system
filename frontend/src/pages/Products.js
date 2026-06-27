@@ -279,7 +279,7 @@ const Products = () => {
                       <TableRow key={prod.id} hover>
                         <TableCell sx={{ fontFamily: "monospace" }}>{prod.sku}</TableCell>
                         <TableCell sx={{ fontWeight: 600 }}>{prod.name}</TableCell>
-                        <TableCell align="right">${Number(prod.price).toFixed(2)}</TableCell>
+                        <TableCell align="right">₹{Number(prod.price).toFixed(2)}</TableCell>
                         <TableCell align="right">{prod.quantity}</TableCell>
                         <TableCell align="center">
                           {isOutOfStock ? (
@@ -357,7 +357,7 @@ const Products = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  label="Price ($) *"
+                  label="Price (₹) *"
                   type="number"
                   inputProps={{ step: "0.01", min: "0" }}
                   fullWidth

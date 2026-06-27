@@ -207,7 +207,7 @@ const CreateOrder = () => {
                 <Grid item xs={6} sm={2}>
                   <TextField
                     label="Price"
-                    value={item.price > 0 ? `$${item.price.toFixed(2)}` : "-"}
+                    value={item.price > 0 ? `₹${item.price.toFixed(2)}` : "-"}
                     disabled
                     fullWidth
                     size="small"
@@ -228,7 +228,7 @@ const CreateOrder = () => {
                 </Grid>
                 <Grid item xs={10} sm={2}>
                   <Typography variant="body2" sx={{ fontWeight: 700, textAlign: "right" }}>
-                    Subtotal: ${((item.price || 0) * (item.quantity || 0)).toFixed(2)}
+                    Subtotal: ₹{((item.price || 0) * (item.quantity || 0)).toFixed(2)}
                   </Typography>
                 </Grid>
                 <Grid item xs={2} sm={1} sx={{ textAlign: "center" }}>
@@ -275,7 +275,7 @@ const CreateOrder = () => {
               <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                 <Typography variant="h6">Total Bill:</Typography>
                 <Typography variant="h6" color="primary" sx={{ fontWeight: 800 }}>
-                  ${totalAmount.toFixed(2)}
+                  ₹{totalAmount.toFixed(2)}
                 </Typography>
               </Box>
             </Stack>

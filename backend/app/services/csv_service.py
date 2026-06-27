@@ -12,7 +12,7 @@ def export_products_csv(db: Session) -> str:
     writer = csv.writer(f)
     
     # Headers
-    writer.writerow(["ID", "Name", "SKU", "Description", "Price ($)", "Quantity", "Created At", "Updated At"])
+    writer.writerow(["ID", "Name", "SKU", "Description", "Price (₹)", "Quantity", "Created At", "Updated At"])
     
     for p in products:
         writer.writerow([
@@ -35,7 +35,7 @@ def export_orders_csv(db: Session) -> str:
     writer = csv.writer(f)
     
     # Headers
-    writer.writerow(["Order ID", "Customer Name", "Customer Email", "Total Amount ($)", "Status", "Created At", "Item Count"])
+    writer.writerow(["Order ID", "Customer Name", "Customer Email", "Total Amount (₹)", "Status", "Created At", "Item Count"])
     
     for o in orders:
         writer.writerow([

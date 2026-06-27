@@ -212,7 +212,7 @@ const ProductDetails = () => {
                     Total Value:
                   </Typography>
                   <Typography variant="body2" sx={{ fontWeight: 700 }}>
-                    ${(Number(product.price) * product.quantity).toFixed(2)}
+                    ₹{(Number(product.price) * product.quantity).toFixed(2)}
                   </Typography>
                 </Box>
               </Stack>
@@ -252,7 +252,7 @@ const ProductDetails = () => {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
-                      label="Unit Price ($)"
+                      label="Unit Price (₹)"
                       type="number"
                       inputProps={{ step: "0.01", min: "0" }}
                       fullWidth

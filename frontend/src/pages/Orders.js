@@ -236,7 +236,7 @@ const Orders = () => {
                       <TableCell>{ord.customer_name}</TableCell>
                       <TableCell>{ord.customer_email}</TableCell>
                       <TableCell align="right" sx={{ fontWeight: "bold" }}>
-                        ${Number(ord.total_amount).toFixed(2)}
+                        ₹{Number(ord.total_amount).toFixed(2)}
                       </TableCell>
                       <TableCell>{new Date(ord.created_at).toLocaleString()}</TableCell>
                       <TableCell align="center">
