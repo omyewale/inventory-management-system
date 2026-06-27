@@ -1,0 +1,31 @@
+# Python files
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env
+
+# Node files
+node_modules/
+build/
+npm-debug.log
+.env.local
+
+# IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# SQLite fallback local files
+*.db
+*.sqlite3
+
+# Static uploads folder
+backend/static/uploads/*
+!backend/static/uploads/.gitkeep
