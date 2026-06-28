@@ -380,9 +380,9 @@ const Dashboard = () => {
               />
             </Box>
             <Divider />
-            <Box sx={{ px: 2, pb: 2, pt: 1, height: 320 }}>
+            <Box sx={{ px: 2, pb: 2, pt: 1, height: 360 }}>
               <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={stats?.revenue_chart} margin={{ top: 10, right: 20, left: 0, bottom: 0 }}>
+                <AreaChart data={stats?.revenue_chart} margin={{ top: 30, right: 20, left: 10, bottom: 0 }}>
                   <defs>
                     <linearGradient id="colorRev" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor={primaryColor} stopOpacity={0.7} />
@@ -399,7 +399,13 @@ const Dashboard = () => {
                   <YAxis
                     stroke={theme.palette.text.secondary}
                     style={{ fontSize: "0.72rem" }}
-                    tickFormatter={(v) => `₹${v >= 1000 ? `${(v / 1000).toFixed(0)}k` : v}`}
+                    width={72}
+                    domain={[0, (dataMax) => Math.ceil(dataMax * 1.2)]}
+                    tickFormatter={(v) => {
+                      if (v >= 100000) return `₹${(v / 100000).toFixed(1)}L`;
+                      if (v >= 1000) return `₹${(v / 1000).toFixed(0)}k`;
+                      return `₹${v}`;
+                    }}
                   />
                   <Tooltip
                     contentStyle={{
